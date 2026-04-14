@@ -11,5 +11,7 @@ return simpleDispatcher(function (RouteCollector $r) {
     $r->addRoute('GET', '/dashboard', [AdminController::class, 'index']);
     // categories
     $r->addRoute('GET', '/categories/create', [CategoryController::class, 'create']);
+    // save category
+    $r->addRoute('POST', '/categories/save_category', [CategoryController::class, 'store']);
 
 });
