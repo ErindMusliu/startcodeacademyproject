@@ -4,8 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
 
-// PSR-4 friendly: trim folderin bazë në localhost
-$basePath = '/startcodeacademy-project'; // ndrysho në folderin tënd
+$basePath = '/startcodeacademy-project';
 if (strpos($uri, $basePath) === 0) {
     $uri = substr($uri, strlen($basePath));
 }
