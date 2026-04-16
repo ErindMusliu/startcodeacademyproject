@@ -13,7 +13,8 @@ class CategoryController extends BaseController{
             return $this->view('categories/categories',['articles'=>$articles]);
         }
     }
-    public function create(){
+    public function create($id){
+        var_dump($id);
         return $this->view('categories/create');
     }
 
