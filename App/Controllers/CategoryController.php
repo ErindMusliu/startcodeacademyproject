@@ -4,6 +4,15 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 
 class CategoryController extends BaseController{
+    public function index(){
+        $sql = "select * from kategorite";
+        $result = $this->conn->query($sql);
+
+        if($result->num_rows>0){
+            $articles = $result->fetch_all(MYSQLI_ASSOC);
+            return $this->view('categories/categories');
+        }
+    }
     public function create(){
         return $this->view('categories/create');
     }
