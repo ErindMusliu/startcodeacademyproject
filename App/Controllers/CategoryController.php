@@ -10,7 +10,7 @@ class CategoryController extends BaseController{
 
         if($result->num_rows>0){
             $articles = $result->fetch_all(MYSQLI_ASSOC);
-            return $this->view('categories/categories');
+            return $this->view('categories/categories',['articles'=>$articles]);
         }
     }
     public function create(){
