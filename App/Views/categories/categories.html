@@ -18,7 +18,18 @@
           <td>{{article.id}}</td>
           <td>{{article.emri_kategorise}}</td>
           <td>{{article.pershkrimi_kategorise}}</td>
-          <td><button class="btn btn-success"></button></td>
+          <td>
+            <a
+              class="btn btn-warning"
+              href="startcodeacademy-project/categories/edit{{article.id}}"
+              >Edit</a
+            >
+            <a
+              class="btn btn-danger"
+              href="startcodeacademy-project/categories/delete{{article.id}}"
+              >Delete</a
+            >
+          </td>
         </tr>
         {% endfor %}
       </tbody>
