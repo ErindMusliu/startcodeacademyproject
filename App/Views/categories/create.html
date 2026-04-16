@@ -16,6 +16,9 @@
               >Emri i Kategorise:</label
             >
             <input type="text" name="emri_kategorise" class="form-control" />
+            {% if error_emri_kategorise %}
+            <small class="text-danger fw-bold">{{error_emri_kategorise}}</small>
+            {% endif %}
           </div>
 
           <!-- Pershkrimi i Kategorise -->
@@ -29,6 +32,11 @@
               class="form-control"
               rows="5"
             ></textarea>
+            {% if error_pershkrimi_kategorise %}
+            <small class="text-danger fw-bold"
+              >{{error_pershkrimi_kategorise}}</small
+            >
+            {% endif %}
           </div>
 
           <!-- Button -->
