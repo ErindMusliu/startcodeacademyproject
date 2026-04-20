@@ -1,0 +1,57 @@
+{% extends "backend_layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 mt-5">
+      {% if flash_error %}
+      <div class="alert alert-danger">{{flash_error}}</div>
+      {% endif %} {% if flash_success %}
+      <div class="alert alert-success">{{flash_success}}</div>
+      {% endif %}
+      <div class="card shadow-lg p-3 rounded-3">
+        <h2>➕ Shto Kategori</h2>
+
+        <form
+          action="/startcodeacademy-project/categories/save_category"
+          method="post"
+        >
+          <!-- Emri i Kategorise -->
+          <div class="mb-3">
+            <label for="emri_kategorise" class="form-lable"
+              >Emri i Kategorise:</label
+            >
+            <input type="text" name="emri_kategorise" class="form-control" />
+            {% if error_emri_kategorise %}
+            <small class="text-danger fw-bold">{{error_emri_kategorise}}</small>
+            {% endif %}
+          </div>
+
+          <!-- Pershkrimi i Kategorise -->
+          <div class="mb-3">
+            <label for="pershkrimi_kategorise" class="form-lable"
+              >Pershkrimi i Kategorise:</label
+            >
+            <textarea
+              name="pershkrimi_kategorise"
+              id="pershkrimi_kategorise"
+              class="form-control"
+              rows="5"
+            ></textarea>
+            {% if error_pershkrimi_kategorise %}
+            <small class="text-danger fw-bold"
+              >{{error_pershkrimi_kategorise}}</small
+            >
+            {% endif %}
+          </div>
+
+          <!-- Button -->
+          <div class="mb-3">
+            <button class="btn btn-dark" type="submit">Ruaj</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
