@@ -126,5 +126,10 @@ class CategoryController extends BaseController{
             $flash_success = "Te dhenat u fshine me sukses";
             return $this->view('categories/categories',compact($flash_success));
         }
+
+        else{
+            $flash_error = "Te dhenat nuk u fshine";
+            return $this->view('categories/categories',compact($flash_error));
+        }
     }
 }
