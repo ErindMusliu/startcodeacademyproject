@@ -72,8 +72,8 @@ class CategoryController extends BaseController{
         }
     }
 
-    public function update($id){
-        $category_id = filter_var($id,FILTER_SANITIZE_NUMBER_INT);
+    public function update(){
+        $category_id = filter_var($_POST['category_id'],FILTER_SANITIZE_NUMBER_INT);
         $error = 0;
         // Emri i Kategorise
 
