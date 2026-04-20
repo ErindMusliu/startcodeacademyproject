@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Controllers\BaseController;
+use App\Models\Category;
 
 class CategoryController extends BaseController{
     public function index(){
@@ -122,15 +123,16 @@ class CategoryController extends BaseController{
         $sql = "delete from kategorite where id='$category_id'";
 
         $result = $this->conn->query($sql);
+        $categories = Category::all();
 
         if($result){
             $flash_success = "Te dhenat u fshine me sukses";
-            return $this->view('categories/categories',compact('flash_success'));
+            return $this->view('categories/categories',compact('flash_success','articles'));
         }
 
         else{
             $flash_error = "Te dhenat nuk u fshine";
-            return $this->view('categories/categories',compact('flash_error'));
+            return $this->view('categories/categories',compact('flash_error','articles'));
         }
     }
 }
