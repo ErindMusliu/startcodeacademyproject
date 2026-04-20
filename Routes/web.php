@@ -19,4 +19,6 @@ return simpleDispatcher(function (RouteCollector $r) {
     $r->addRoute('GET', '/categories/edit/{id:\d+}', [CategoryController::class, 'edit']);
     // delete category
     $r->addRoute('GET', '/categories/delete/{id:\d+}', [CategoryController::class, 'delete']);
+    // edit category
+    $r->addRoute('POST', '/categories/edit_category', [CategoryController::class, 'update']);
 });

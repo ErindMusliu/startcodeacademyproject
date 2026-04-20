@@ -9,10 +9,10 @@
       <div class="alert alert-success">{{flash_success}}</div>
       {% endif %}
       <div class="card shadow-lg p-3 rounded-3">
-        <h2>➕ Shto Kategori</h2>
+        <h2>➕ Edito Kategorine</h2>
 
         <form
-          action="/startcodeacademy-project/categories/save_category"
+          action="/startcodeacademy-project/categories/edit_category"
           method="post"
         >
           <!-- Emri i Kategorise -->
@@ -20,7 +20,12 @@
             <label for="emri_kategorise" class="form-lable"
               >Emri i Kategorise:</label
             >
-            <input type="text" name="emri_kategorise" class="form-control" />
+            <input
+              type="text"
+              name="emri_kategorise"
+              class="form-control"
+              value="{{category.emri_kategorise}}"
+            />
             {% if error_emri_kategorise %}
             <small class="text-danger fw-bold">{{error_emri_kategorise}}</small>
             {% endif %}
@@ -36,7 +41,9 @@
               id="pershkrimi_kategorise"
               class="form-control"
               rows="5"
-            ></textarea>
+            >
+{{category.pershkrimi_kategorise}}</textarea
+            >
             {% if error_pershkrimi_kategorise %}
             <small class="text-danger fw-bold"
               >{{error_pershkrimi_kategorise}}</small
