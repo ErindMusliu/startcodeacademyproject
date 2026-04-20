@@ -13,6 +13,7 @@ class CategoryController extends BaseController{
             return $this->view('categories/categories',['articles'=>$articles]);
         }
     }
+
     public function create(){
         return $this->view('categories/create');
     }
@@ -124,12 +125,12 @@ class CategoryController extends BaseController{
 
         if($result){
             $flash_success = "Te dhenat u fshine me sukses";
-            return $this->view('categories/categories',compact($flash_success));
+            return $this->view('categories/categories',compact('flash_success'));
         }
 
         else{
             $flash_error = "Te dhenat nuk u fshine";
-            return $this->view('categories/categories',compact($flash_error));
+            return $this->view('categories/categories',compact('flash_error'));
         }
     }
 }
