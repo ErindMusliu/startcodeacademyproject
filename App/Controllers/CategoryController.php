@@ -13,8 +13,7 @@ class CategoryController extends BaseController{
             return $this->view('categories/categories',['articles'=>$articles]);
         }
     }
-    public function create($id){
-        var_dump($id);
+    public function create(){
         return $this->view('categories/create');
     }
 
@@ -58,5 +57,9 @@ class CategoryController extends BaseController{
                 return $this->view('categories/create',['flash_error'=>$flash_error]);
             }
         }
+    }
+
+    public function edit($id){
+        var_dump($id);
     }
 }
