@@ -114,4 +114,17 @@ class CategoryController extends BaseController{
             }
         }
     }
+
+    public function delete($id){
+        $category_id = filter_var($id,FILTER_SANITIZE_NUMBER_INT);
+
+        $sql = "delete from kategorite where id='$category_id'";
+
+        $result = $this->conn->query($sql);
+
+        if($result){
+            $flash_success = "Te dhenat u fshine me sukses";
+            return $this->view('categories/categories',compact($flash_success));
+        }
+    }
 }
