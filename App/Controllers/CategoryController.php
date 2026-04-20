@@ -60,6 +60,15 @@ class CategoryController extends BaseController{
     }
 
     public function edit($id){
-        var_dump($id);
+        $category_id = filter_var($id,FILTER_SANITIZE_NUMBER_INT);
+
+        $sql = "select * from kategorite where id='$category_id'";
+
+        $result = $this->conn->query($sql);
+
+        if($result->num_rows>0){
+            $row = $result->fetch_assoc();
+            return $this->view('categories/edit',['category'=>$row]);
+        }
     }
 }
